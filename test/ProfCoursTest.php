@@ -281,7 +281,7 @@ class ProfCoursTest extends TestCase
         $idProf = 10;
         $idCours = 9;
         // Prof
-        $prof = Prof::printOne($conn, $idProf);
+        $prof = Prof::printOne($conn, 10);
         $prof_str = $prof->__toString();
         print "########## - ${idProf}e PROF EN BASE - ########## \n";
         print $prof_str."\n";
