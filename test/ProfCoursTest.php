@@ -262,7 +262,7 @@ class ProfCoursTest extends TestCase
         // Cours
         $cours = Cours::printOne($conn);
         $cours_str = $cours->__toString();
-        print "########## - 1e PROF EN BASE - ########## \n";
+        print "########## - 1e COURS EN BASE - ########## \n";
         print $cours_str."\n";
         print "################################################################\n\n";
         $expected = self::$cours_a[0]->__toString();
