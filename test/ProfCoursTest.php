@@ -281,7 +281,7 @@ class ProfCoursTest extends TestCase
         $idProf = 10;
         $idCours = 9;
         // Prof
-        $prof = Prof::printOne($conn, 10);
+        $prof = Prof::printOne($conn, $idProf);
         $prof_str = $prof->__toString();
         print "########## - ${idProf}e PROF EN BASE - ########## \n";
         print $prof_str."\n";
@@ -290,7 +290,7 @@ class ProfCoursTest extends TestCase
         $this->assertEquals($expected, $prof_str, "Prof \n");
 
         // Cours
-        $cours = Cours::printOne($conn, 9);
+        $cours = Cours::printOne($conn, $idCours);
         $cours_str = $cours->__toString();
         print "@@@@@@@@@@@@@ - ${idCours}e COURS EN BASE - @@@@@@@@@@@@@ \n";
         print $cours_str."\n";
@@ -410,7 +410,7 @@ class ProfCoursTest extends TestCase
         $idCours = 7;
 
         // Prof
-        $val = Prof::deleteOne($conn, 8);
+        $val = Prof::deleteOne($conn, $idProf);
         $this->assertTrue($val,  "Prof num $idProf supprimer avec succès\n");
         $record_prof_a = Prof::printAll($conn);
         print "########## - LISTE DES PROFS APRES SUPPRESSION- Vérifiez le prof num $idProf ########## \n";
@@ -420,7 +420,7 @@ class ProfCoursTest extends TestCase
         print "################################################################\n\n";
 
         // Cours
-        $val = Cours::deleteOne($conn, 7);
+        $val = Cours::deleteOne($conn, $idCours);
         $this->assertTrue($val, "Cours num $idCours supprimer avec succès\n");
         $record_cours_a = Cours::printAll($conn);
         print "@@@@@@@@@@@@@ - LISTE DES COURS APRES SUPPRESSION - Vérifiez le cours num $idCours @@@@@@@@@@@@@ \n";
